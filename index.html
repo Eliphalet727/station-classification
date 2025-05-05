@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中央氣象署測站分類視覺化 (含詳細欄位與表格)</title>
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+</head>
+<body>
+    <header>
+        <h1>中央氣象署測站分類視覺化</h1>
+    </header>
+
+    <div class="container">
+        <div id="chart-container"></div>
+        <div id="info-panel">
+            <h2>詳細資訊</h2>
+            <p class="placeholder">請點擊左側圖表的任一區塊以查看詳細分類規則。</p>
+            <div id="info-content" style="display: none;">
+                <div id="info-details">
+                    <h3 id="info-name" style="margin-bottom: 15px;"></h3>
+                    <p><span class="rule-label">分類規則：</span><span class="info-value" id="info-rule"></span><span id="info-exception" class="exception-marker"></span></p>
+                    <p><span class="rule-label">系統：</span><span class="info-value" id="info-system"></span></p>
+                    <p><span class="rule-label">所屬單位：</span><span class="info-value" id="info-agency"></span></p>
+                    <p><span class="rule-label">觀測頻率：</span><span class="info-value" id="info-frequency"></span></p>
+                    <p><span class="rule-label">觀測項目：</span><span class="info-value" id="info-observations"></span></p>
+                    <p><span class="rule-label">備註：</span><span class="info-value" id="info-note"></span></p> </div>
+                 <div id="station-table-container">
+                    <table id="station-table" class="display compact" style="width:100%">
+                        <thead>
+                            <tr><th>中文站名</th><th>站碼</th><th>縣市</th><th>經度</th><th>緯度</th></tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        資料日期：2025-05-05 </footer>
+
+    <script src="script.js" defer></script>
+
+</body>
+</html>
